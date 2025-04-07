@@ -1,0 +1,20 @@
+
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "3001:3000"
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "8180:8080"
+
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: test1
+      POSTGRES_DB: demo_db
+    ports:
+      - "5433:5432"
